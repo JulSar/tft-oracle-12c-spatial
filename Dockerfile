@@ -4,7 +4,7 @@ MAINTAINER Baptiste <baptistezegre@gmail.com>
 
 RUN yum -y update && yum clean all
 
-RUN yum install -y java systat git-core maven && yum clean all
+RUN yum install -y java systat git-core maven which && yum clean all
 
 WORKDIR /
 
@@ -15,6 +15,8 @@ WORKDIR BLAZEGRAPH_RELEASE_2_1_0/scripts/
 RUN chmod +x mavenInstall.sh 
 
 RUN chmod +x startBlazegraph.sh
+
+RUN chmod +x prog.sh
 
 RUN ./mavenInstall.sh
 
